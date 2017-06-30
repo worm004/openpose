@@ -31,11 +31,11 @@ caffe_option(CPU_ONLY  "Build Caffe without CUDA support" OFF) # TODO: rename to
 caffe_option(USE_CUDNN "Build Caffe with cuDNN library support" ON IF NOT CPU_ONLY)
 caffe_option(USE_NCCL "Build Caffe with NCCL library support" OFF)
 caffe_option(BUILD_SHARED_LIBS "Build shared libraries" ON)
-caffe_option(BUILD_python "Build Python wrapper" ON)
+caffe_option(BUILD_python "Build Python wrapper" OFF)
 set(python_version "2" CACHE STRING "Specify which Python version to use")
 caffe_option(BUILD_matlab "Build Matlab wrapper" OFF IF UNIX OR APPLE)
 caffe_option(BUILD_docs   "Build documentation" ON IF UNIX OR APPLE)
-caffe_option(BUILD_python_layer "Build the Caffe Python layer" ON)
+caffe_option(BUILD_python_layer "Build the Caffe Python layer" OFF)
 caffe_option(USE_OPENCV "Build with OpenCV support" ON)
 caffe_option(USE_LEVELDB "Build with levelDB" ON)
 caffe_option(USE_LMDB "Build with lmdb" ON)
@@ -43,6 +43,7 @@ caffe_option(ALLOW_LMDB_NOLOCK "Allow MDB_NOLOCK when reading LMDB files (only i
 caffe_option(USE_OPENMP "Link with OpenMP (when your BLAS wants OpenMP and you get linker errors)" OFF)
 
 # ---[ Dependencies
+include(/home/guanyue/lib/cmake/Dependencies.cmake)
 include(cmake/Dependencies.cmake)
 
 # ---[ Flags
@@ -91,7 +92,7 @@ add_subdirectory(src/gtest)
 add_subdirectory(src/caffe)
 add_subdirectory(tools)
 add_subdirectory(examples)
-add_subdirectory(python)
+#add_subdirectory(python)
 add_subdirectory(matlab)
 add_subdirectory(docs)
 
