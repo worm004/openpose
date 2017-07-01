@@ -37,14 +37,14 @@ namespace op
         const Point<int> mOutputSize;
         std::array<std::atomic<double>, (int)FaceProperty::Size> mProperties;
         std::shared_ptr<Net> spNet;
-        std::shared_ptr<ResizeAndMergeCaffe<float>> spResizeAndMergeCaffe;
+        std::shared_ptr<ResizeAndMergeCaffe<float> > spResizeAndMergeCaffe;
         std::shared_ptr<NmsCaffe<float>> spNmsCaffe;
         Array<float> mFaceImageCrop;
         Array<float> mFaceKeypoints;
         // Init with thread
-        boost::shared_ptr<caffe::Blob<float>> spCaffeNetOutputBlob;
-        std::shared_ptr<caffe::Blob<float>> spHeatMapsBlob;
-        std::shared_ptr<caffe::Blob<float>> spPeaksBlob;
+        boost::shared_ptr<caffe::Blob<float> > spCaffeNetOutputBlob;
+        std::shared_ptr<caffe::Blob<float> > spHeatMapsBlob;
+        std::shared_ptr<caffe::Blob<float> > spPeaksBlob;
         std::thread::id mThreadId;
 
         void checkThread() const;
