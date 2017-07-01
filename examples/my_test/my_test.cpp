@@ -8,6 +8,7 @@
 
 int main(){
 	cv::VideoCapture cap("/home/guanyue/IVA/@Data_Center_S06 - 2053P Gate F57 F58 - 20170616 070000.mp4");	
+
 	op::Point<int> outputSize;
 	outputSize.x = 1280;
 	outputSize.y = 720;

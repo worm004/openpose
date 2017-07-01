@@ -11,12 +11,16 @@ find_package(Caffe REQUIRED)
 find_package(CUDA REQUIRED)
 find_package(Boost REQUIRED)
 
-set( CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS}; -std=c++11 -O2 -gencode arch=compute_50,code=sm_50 
+set( CUDA_NVCC_FLAGS 
+	${CUDA_NVCC_FLAGS}; 
+	-std=c++11 -O2 
+	-Xcompiler -fPIC
+	-gencode arch=compute_50,code=sm_50 
 	-gencode arch=compute_30,code=sm_30
-		-gencode arch=compute_35,code=sm_35 
-		-gencode arch=compute_50,code=sm_50 
-		-gencode arch=compute_52,code=sm_52
-		-gencode arch=compute_52,code=sm_61)
+	-gencode arch=compute_35,code=sm_35 
+	-gencode arch=compute_50,code=sm_50 
+	-gencode arch=compute_52,code=sm_52
+	-gencode arch=compute_52,code=sm_61)
 
 if(NOT CMAKE_BUILD_TYPE)
 	set(CMAKE_BUILD_TYPE Release)
