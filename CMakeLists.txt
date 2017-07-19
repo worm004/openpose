@@ -30,4 +30,4 @@ set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
 add_subdirectory(src/openpose)
-#add_subdirectory(examples)
+add_subdirectory(examples)

@@ -48,7 +48,7 @@ int main(){
 		auto outputImage = opOutputToCvMat.formatToCvMat(outputArray);
 
 		cv::imshow("a",outputImage);
-		cv::waitKey(0);
+		//cv::waitKey(0);
 	}
 	return 0;
 }

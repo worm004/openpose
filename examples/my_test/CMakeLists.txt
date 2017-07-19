@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.6)
 set (CMAKE_CXX_STANDARD 11)
 project(openpose)
 
-include_directories(/home/guanyue/openpose/include)
 add_executable(my_test my_test.cpp)
 
 set(LINK_LIBS 
@@ -19,6 +18,5 @@ set(LINK_LIBS
 	utilities 
 )
 
-target_link_libraries(my_test 
-	${LINK_LIBS} ${LINK_LIBS})
+target_link_libraries(my_test ${LINK_LIBS} ${LINK_LIBS} ${Caffe_LIBRARIES})
 
