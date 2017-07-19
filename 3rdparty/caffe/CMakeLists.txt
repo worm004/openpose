@@ -43,7 +43,8 @@ caffe_option(ALLOW_LMDB_NOLOCK "Allow MDB_NOLOCK when reading LMDB files (only i
 caffe_option(USE_OPENMP "Link with OpenMP (when your BLAS wants OpenMP and you get linker errors)" OFF)
 
 # ---[ Dependencies
-include(/home/guanyue/lib/cmake/Dependencies.cmake)
+#include(/home/guanyue/lib/cmake/Dependencies.cmake)
+include(../../../cmake/Dependencies.cmake)
 include(cmake/Dependencies.cmake)
 
 # ---[ Flags

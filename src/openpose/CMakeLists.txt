@@ -1,5 +1,6 @@
 add_definitions(-DUSE_CAFFE)
 
+include_directories(../../include)
 add_subdirectory(core)
 add_subdirectory(filestream)
 add_subdirectory(gui)
